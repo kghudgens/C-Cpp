@@ -18,18 +18,33 @@ int step_function(int x)
 // in c++ the entry point is the main function, like java
 int main()
 {
-    // printf cant be called without include the c studio
-    printf("Hello world!");
 
-    // declaring and initializing variables
-    int the_answer;
-    the_answer = 9;
-    // if statement doesnt need nested bracket
-    // if statement
-    if (the_answer > 10)
-        printf("Its smaller");
-    else if (the_answer == 9)
-        printf("Ya know");
-    else
-        printf("Not one of the two above for sure");
+    int num1 = 42;
+    int result1 = step_function(num1);
+
+    
+    int num2 = 42;
+    int result2 = step_function(num2);
+
+
+    int num3 = 42;
+    int result2 = step_function(num3);
+
+    printf("Num1 : %d, Step: %d\n", num1, result1);
+    printf("Num2 : %d, Step: %d\n", num2, result3);
+    printf("Num3 : %d, Step: %d\n", num3, result3);
+    // // printf cant be called without include the c studio
+    // printf("Hello world!");
+
+    // // declaring and initializing variables
+    // int the_answer;
+    // the_answer = 9;
+    // // if statement doesnt need nested bracket
+    // // if statement
+    // if (the_answer > 10)
+    //     printf("Its smaller");
+    // else if (the_answer == 9)
+    //     printf("Ya know");
+    // else
+    //     printf("Not one of the two above for sure");
 }
