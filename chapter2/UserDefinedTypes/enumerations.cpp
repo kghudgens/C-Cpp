@@ -1,6 +1,6 @@
 #include <cstdio>
 
-enum class Race
+enum Race
 {
     Dinan,
     Teklan,
