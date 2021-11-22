@@ -5,6 +5,11 @@
 //calculate
 //write result
 
+void error(std::string message)
+{
+    std::cout << message;
+}
+
 int main()
 {
     std::cout << "Please enter expression (we can handle +, *, -): \n";
@@ -14,21 +19,38 @@ int main()
     char op;
 
     int result;
-    std::cin >> lval >> op >> rval;
+    std::cin >> lval;
 
-    switch (op)
+    if (!std::cin)
+        error("no first operand");
+
+    while (std::cin >> op)
     {
-    case '+':
-        result = lval + rval;
-        break;
-    case '-':
-        result = lval - rval;
-        break;
-    case '*':
-        result = lval * rval;
-        break;
+        std::cin >> rval;
+        if (!std::cin >> op)
+            error("no second operand");
+
+        switch (op)
+        {
+        case '+':
+            result = lval + rval;
+            break;
+        case '-':
+            result = lval - rval;
+            break;
+        case '*':
+            result = lval * rval;
+            break;
+        case '/':
+            result = lval / rval;
+            break;
+        default:
+            std::cout << "Result: " << lval << "\n";
+            return 0;
+        }
     }
-    std::cout << "Result: " << result << '\n';
+
+    error("bad expression");
 
     return 0;
 }
