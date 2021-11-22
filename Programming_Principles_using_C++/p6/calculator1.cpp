@@ -7,7 +7,7 @@
 
 int main()
 {
-    std::cout << "Please enter expression (we can handle + and -): \n";
+    std::cout << "Please enter expression (we can handle +, *, -): \n";
 
     int lval = 0;
     int rval;
@@ -16,10 +16,19 @@ int main()
     int result;
     std::cin >> lval >> op >> rval;
 
-    if (op == '+')
+    switch (op)
+    {
+    case '+':
         result = lval + rval;
-    else if (op == '-')
+        break;
+    case '-':
         result = lval - rval;
-
+        break;
+    case '*':
+        result = lval * rval;
+        break;
+    }
     std::cout << "Result: " << result << '\n';
+
+    return 0;
 }
