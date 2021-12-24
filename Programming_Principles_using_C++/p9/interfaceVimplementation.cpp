@@ -13,3 +13,23 @@ private:
     // types
     //  data
 };
+
+// Classes are by default private unless access modifier is set to public
+class Y
+{
+    int m;
+    int mf(int);
+
+public:
+    int f(int i)
+    {
+        m = i;
+        return mf(i);
+    }
+};
+
+int main()
+{
+    Y x;
+    int y = x.f(2);
+}
