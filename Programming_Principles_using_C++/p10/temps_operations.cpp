@@ -25,7 +25,9 @@ static int mean(std::vector<int> &vect)
 
 static int median(std::vector<int> vect)
 {
-    //! still got to create vector with correct ordering
+    // in place
+    sort(vect.begin(), vect.end());
+
     int median;
     median = 0;
 
