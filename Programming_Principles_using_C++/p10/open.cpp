@@ -2,18 +2,13 @@
 #include <fstream>
 #include <string>
 
-class IOStreams
+static void error(std::string s, std::string file)
 {
-public:
-    void error(std::string s, std::string file)
-    {
-        std::cout << s << " filename: " << file;
-    }
-};
+    std::cout << s << " filename: " << file;
+}
 
 int main()
 {
-    IOStreams x;
 
     std::cout << "Please enter input file name: ";
     std::string filename;
@@ -21,7 +16,10 @@ int main()
     std::cin >> filename;
 
     std::ifstream ist(filename.c_str()); // ist is the name of the instance for ifstream
+    // defining an ifstream with the name of the string, opens the file for reading
+    // c_str() is member of string class and makes a c style string
+
     if (!ist)
-        x.error("cant open input file", filename);
+        error("cant open input file", filename);
     return 0;
 }
